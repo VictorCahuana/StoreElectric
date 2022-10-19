@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="angularRoutingApp">
+<head>
+	<meta charset="utf-8">
+	<title>Intranet | FERCEJOR</title>
+	<link rel="stylesheet" type="text/css" href="css/IntranetEstilo.css">
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+	
+	
+
+</head>
+<body ng-controller="mainController" style="background-color: #f7e9d5">
+<header style="width: 100%; background-color: #c97608;">
+	<nav>
+		<ul style="margin:0; list-style: none; padding:0; display:flex;">
+			<li style="border-right: 1px solid #fff"><a href="#" style="display:block; padding:15px 20px;color:#fff; text-decoration:none;">Lista de empleados</a></li>
+			<li style="border-right: 1px solid #fff"><a href="#ingresarproducto" style="display:block; padding:15px 20px;color:#fff; text-decoration:none;">Lista de productos</a></li>
+			<li style="border-right: 1px solid #fff"><a href="#calculadora" style="display:block; padding:15px 20px;color:#fff; text-decoration:none;">Calculadora</a></li>
+			<li style="border-right: 1px solid #fff"><a href="Inicio.html" style="display:block; padding:15px 20px;color:#fff; text-decoration:none;">Salir del Intranet</a></li>
+		</ul>
+	</nav>
+</header>
+<div id="main">
+		<div ng-view>
+			
+		</div>
+</div>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.7/angular.min.js"></script>
+  	<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.3/angular-route.js"></script>
+  	<script src="js/main.js"></script>
+  	  	
+</body>
+</html>

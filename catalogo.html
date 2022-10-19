@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html >
+<meta charset="UTF-8">
+<head name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>CATALOGO||FERCEJOR</title>
+	<link rel="stylesheet" href="css/Inicioestilo.css">
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+	<script type="text/javascript" src="angular/angular.min.js"></script>
+</head>
+<body ng-app="estiloCompra">
+	<header class="main-header">
+      <div class="container container--flex">
+        <div class="main-header__container">
+          <h1 class="main-header__title">FERCEJOR</h1>
+          <span class="icon-menu" id="btn-menu"><i class="fas fa-bars"></i></span>
+          <nav class="main-nav" id="main-nav">
+            <ul class="menu">
+              <li class="menu__item"><a href="Inicio.html" class="menu__link">Inicio</a></li>
+              <li class="menu__item"><a href="Acerca.html" class="menu__link">Nuestra empresa</a></li>
+              <li class="menu__item"><a href="Articulos.html" class="menu__link">Artículos</a></li>
+              <li class="menu__item"><a href="Tienda.html" class="menu__link">Tienda</a></li>
+              <li class="menu__item"><a href="" class="menu__link">Contáctanos</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="main-header__container">
+          <span class="main-header__txt">¿Necesitas ayuda?</span>
+          <p class="main-header__txt"><i class="fas fa-phone"></i> Llama al 123456789</p>
+        </div>
+        <div class="main-header__container">
+          <a href="Iniciarsesion.html" class="main-header__link"><i class="fas fa-user"></i></a>
+          <a href="" class="main-header__btn">Mi carrito <i class="fas fa-shopping-cart"></i></a>
+          <input type="search" class="main-header__input" placeholder="Buscar productos"><i class="fas fa-search"></i>
+        </div>
+      </div>
+    </header>
+
+    <div class="container-slider">
+      <div class="slider" id="slider">
+        <div class="slider__section">
+          <img src="img/llantaslider.jpg" alt="" class="slider__img">
+          <div class="slider__content">
+            <h2 class="slider__title">Amplia colección de llantas</h2>
+            <p class="slider__txt">Solo por verano 50% de descuento</p>
+            <a href="" class="btn-shop">COMPRAR</a>
+          </div>
+        </div>
+        <div class="slider__section">
+          <img src="img/aro.jpg" alt="" class="slider__img">
+          <div class="slider__content">
+            <h2 class="slider__title">Rines de diferentes modelos y tamaños</h2>
+            <p class="slider__txt">Descuentos disponibles por la compra de un set completo</p>
+            <a href="" class="btn-shop">COMPRAR</a>
+          </div>
+        </div>
+        <div class="slider__section">
+          <img src="img/limpieza.jpg" alt="" class="slider__img">
+          <div class="slider__content">
+            <h2 class="slider__title">Los mejores productos de limpieza para autos</h2>
+            <p class="slider__txt">Productos usados por los profesionales</p>
+            <a href="" class="btn-shop">COMPRAR</a>
+          </div>
+        </div>
+        <div class="slider__section">
+          <img src="img/aceite.jpg" alt="" class="slider__img">
+          <div class="slider__content">
+            <h2 class="slider__title">Gran variedad de aceites</h2>
+            <p class="slider__txt">Tu motor necesita un cuidado especial</p>
+            <a href="" class="btn-shop">COMPRAR</a>
+          </div>
+        </div>
+      </div>
+      <div class="slider__btn slider__btn--right" id="btn-right">&#62;</div>
+      <div class="slider__btn slider__btn--left" id="btn-left">&#60;</div>
+    </div>
+
+	<main class="main">
+		<!-- ----------------------------- -->
+    <div ng-controller="controlador">
+        <div class="container">
+          <div ng-class="claseAngular">
+          <h2 class="main-title" align="center">Catalogo de la tienda</h2>
+        </div>
+          <table>
+            <tr>
+                <td>
+                    <div class="tip" > 
+                    <a href="" class="btn-shop" ng-click="opcionA()" >MOTOR</a>
+                    </div>
+                </td>
+                <td>
+                    <div class="tip" >  
+                    <a href="" class="btn-shop"ng-click="opcionB()">FILTROS</a>
+                    </div>
+                </td>
+                <td>
+                    <div class="tip">
+                    <a href="" class="btn-shop" ng-click="opcionC()">FRENOS</a>
+                    </div>
+                </td>
+                 <td>
+                    <div class="tip">
+                    <a href="" class="btn-shop" ng-click="opcionD()">NEUMATICOS</a>
+                    </div>
+                </td>
+                 <td>
+                    <div class="tip">
+                    <a href="" class="btn-shop" ng-click="opcionE()">INTERIOR</a>
+                    </div>
+                </td>
+              
+                 <td>
+                    <div class="tip" >
+                    <a href="" class="btn-shop" ng-click="opcionG()">BATERIA</a>
+                    </div>
+                </td>
+                 <td>
+                    <div class="tip">
+                    <a href="" class="btn-shop" ng-click="opcionH()">ENBRAGUE</a>
+                    </div>
+                </td>
+                <td>
+                    <div class="tip">
+                    <a href="" class="btn-shop" ng-click="opcionF()">LIMPIEZA</a>
+                    </div>
+                </td>
+          </tr>
+        </table>
+      </div>
+
+<section class="container-products"  ng-switch ="opcion">
+ <!-- <div ng-switch ="opcion"> -->
+    <br>
+     <div class="product" >
+             <img ng-src="{{imagenActiva}}"  alt="" class="product__img">
+              <div class="product__description">
+
+              <h3 class="product__title" ng-switch-when ="a"> MOTOR NISSAN TD27</h3>
+              <span class="product__price" ng-switch-when ="a">S/7500.00</span>
+
+              <h3 class="product__title" ng-switch-when ="b">JC PREMIUM | Filtro de aire </h3>
+              <span class="product__price" ng-switch-when ="b">S/42.90</span>
+
+                  <h3 class="product__title" ng-switch-when ="c">RIDEX | Disco de freno </h3>
+              <span class="product__price" ng-switch-when ="c">S/202.50</span>
+
+              <h3 class="product__title" ng-switch-when ="d">Turanza | Llanta ER300</h3>
+              <span class="product__price" ng-switch-when ="d">S/500.20</span>
+
+               <h3 class="product__title" ng-switch-when ="e">RIDEX | Elevalunas </h3>
+              <span class="product__price" ng-switch-when ="e">S/199.80</span>
+
+              <h3 class="product__title" ng-switch-when ="f">Kit Interior Eco</h3>
+              <span class="product__price" ng-switch-when ="f">S/39.90</span>
+
+              <h3 class="product__title" ng-switch-when ="g">ETNA | Batería para Auto 13 Placas 75Ah W-13 PRO</h3>
+              <span class="product__price" ng-switch-when ="g">S/ 224.90</span>
+
+              <h3 class="product__title" ng-switch-when ="h">RIDEX | Disco de embrague</h3>
+              <span class="product__price" ng-switch-when ="h">S/138.00</span>
+            </div>
+            <i class="product__icon fas fa-cart-plus"></i>
+      </div>
+      <br>
+      <div class="product">
+             <img ng-src="{{imagenActiva1}}"  alt="" class="product__img">
+              <div class="product__description">
+
+              <h3 class="product__title" ng-switch-when ="a">MOTOR TOYOTA 3L</h3>
+              <span class="product__price" ng-switch-when ="a">S/5000.00</span>
+
+              <h3 class="product__title" ng-switch-when ="b"> PURFLUX | Filtro de aceite</h3>
+              <span class="product__price" ng-switch-when ="b">S/30.20</span>
+
+              <h3 class="product__title" ng-switch-when ="c"> MASTER-SPORT | Juego de pastillas de freno</h3>
+              <span class="product__price" ng-switch-when ="c">S/50.00</span>
+
+              <h3 class="product__title" ng-switch-when ="d">Continental | Llanta SP sport 601</h3>
+              <span class="product__price" ng-switch-when ="d">S/479.50</span>
+
+              <h3 class="product__title" ng-switch-when ="e">TOPRAN | Resistencia de Ventilador </h3>
+              <span class="product__price" ng-switch-when ="e">S/60.00</span>
+
+              <h3 class="product__title" ng-switch-when ="f">Lavaparabrisa Concentrado</h3>
+              <span class="product__price" ng-switch-when ="f">S/16.90</span>
+
+              <h3 class="product__title" ng-switch-when ="g">CAPSA | Batería para Auto 11 Placas 12V 11WI</h3>
+              <span class="product__price" ng-switch-when ="g">S/239.90</span>
+
+              <h3 class="product__title" ng-switch-when ="h">NEXUS | Kit de embrague </h3>
+              <span class="product__price" ng-switch-when ="h">S/260.36</span>
+            </div>
+            <i class="product__icon fas fa-cart-plus"></i>
+      </div>
+       <br>
+      <div class="product">
+             <img ng-src="{{imagenActiva2}}"  alt="" class="product__img">
+              <div class="product__description">
+
+              <h3 class="product__title" ng-switch-when ="a">Motor V8 Ford 347x Dual Quad 449hp Small Block</h3>
+              <span class="product__price" ng-switch-when ="a">S/8900.00</span>
+
+              <h3 class="product__title" ng-switch-when ="b">BOSCH | Filtro de aceite</h3>
+              <span class="product__price" ng-switch-when ="b">S/35.00</span>
+
+              <h3 class="product__title" ng-switch-when ="c">STARK | Cable de accionamiento, freno de estacionamiento</h3>
+              <span class="product__price" ng-switch-when ="c">S/42.00</span>
+
+              <h3 class="product__title" ng-switch-when ="d">Continental | Llanta CONTISPORT CONTACT 2</h3>
+              <span class="product__price" ng-switch-when ="d">S/580.50</span>
+
+               <h3 class="product__title" ng-switch-when ="e">VALEO | Sensor de aparcamiento</h3>
+              <span class="product__price" ng-switch-when ="e">S/42.00 </span>
+
+              <h3 class="product__title" ng-switch-when ="f">Cera Easy Shine de 500 ml </h3>
+              <span class="product__price" ng-switch-when ="f">S/75.00</span>
+
+              <h3 class="product__title" ng-switch-when ="g">ETNA | Batería para Auto 13 Placas 70Ah FF-13 PL P/D</h3>
+              <span class="product__price" ng-switch-when ="g">S/354.00</span>
+
+              <h3 class="product__title" ng-switch-when ="h">SACHS | Kit de embrague </h3>
+              <span class="product__price" ng-switch-when ="h">S/350.00</span>
+            </div>
+            <i class="product__icon fas fa-cart-plus"></i>
+      </div>
+       <br>
+      <div class="product">
+             <img ng-src="{{imagenActiva3}}"  alt="" class="product__img">
+              <div class="product__description">
+              <h3 class="product__title" ng-switch-when ="a">Motor V8 Chevy 350cid Ram Jet Con Transmisión Manual T56</h3>
+              <span class="product__price" ng-switch-when ="a">S/7200.00</span>
+
+              <h3 class="product__title" ng-switch-when ="b"> MEYLE |Kit filtro hidráulico, caja automática</h3>
+              <span class="product__price" ng-switch-when ="b">S/80.10</span>
+
+              <h3 class="product__title" ng-switch-when ="c">RIDEX | Pinza de freno </h3>
+              <span class="product__price" ng-switch-when ="c">S/200.00</span>
+
+              <h3 class="product__title" ng-switch-when ="d">HANKOOK | Llanta RADIAL RA08 C</h3>
+              <span class="product__price" ng-switch-when ="d">S/430.00</span>
+
+               <h3 class="product__title" ng-switch-when ="e">VAICO | Muelle neumático, maletero / compartimento de carga </h3>
+              <span class="product__price" ng-switch-when ="e">S/75.00</span>
+
+              <h3 class="product__title" ng-switch-when ="f">SONAX| Limpiador de tapices 500 ml</h3>
+              <span class="product__price" ng-switch-when ="f">S/20.00</span>
+
+              <h3 class="product__title" ng-switch-when ="g">BOSCH | Bateria de 11Placas 42HP S4 (S4 55D) 55AH</h3>
+              <span class="product__price" ng-switch-when ="g">S/431.00</span>
+
+              <h3 class="product__title" ng-switch-when ="h">FERODO | Embrague Cilindro maestro</h3>
+              <span class="product__price" ng-switch-when ="h">S/230.00</span>
+            </div>
+            <i class="product__icon fas fa-cart-plus"></i>
+      </div>
+      <br>
+      <div class="product">
+             <img ng-src="{{imagenActiva4}}"  alt="" class="product__img">
+              <div class="product__description">
+              <h3 class="product__title" ng-switch-when ="a">KIA | Motor Carnival J3</h3>
+              <span class="product__price" ng-switch-when ="a">S/6900.00</span>
+
+              <h3 class="product__title" ng-switch-when ="b"> AUTOMEGA | Filtro combustible 6K_V_250 000</h3>
+              <span class="product__price" ng-switch-when ="b">S/29.10</span>
+
+              <h3 class="product__title" ng-switch-when ="c">LPR | Juego de zapatas de frenos 1KA </h3>
+              <span class="product__price" ng-switch-when ="c">S/50.00</span>
+
+              <h3 class="product__title" ng-switch-when ="d">Michelin Energy | Llantas 175 70R13 82T XM2</h3>
+              <span class="product__price" ng-switch-when ="d">S/590.00</span>
+
+               <h3 class="product__title" ng-switch-when ="e">RIDEX | Unidad de control, calefacción / ventilación </h3>
+              <span class="product__price" ng-switch-when ="e">S/75.00</span>
+
+              <h3 class="product__title" ng-switch-when ="f">Pistola sopladora</h3>
+              <span class="product__price" ng-switch-when ="f">S/21.90</span>
+
+              <h3 class="product__title" ng-switch-when ="g">CAPSA | Batería de 23 Placas 12V 234D</h3>
+              <span class="product__price" ng-switch-when ="g">S/619.00</span>
+
+              <h3 class="product__title" ng-switch-when ="h">3RG | Horquilla de desembrague, embrague </h3>
+              <span class="product__price" ng-switch-when ="h">S/19.00</span>
+            </div>
+            <i class="product__icon fas fa-cart-plus"></i>
+      </div>
+      <br>
+      <div class="product">
+             <img ng-src="{{imagenActiva5}}"  alt="" class="product__img">
+              <div class="product__description">
+              <h3 class="product__title" ng-switch-when ="a">MOTOR CHEVROLET Spark - 4 cilindros</h3>
+              <span class="product__price" ng-switch-when ="a">S/8760.00</span>
+
+              <h3 class="product__title" ng-switch-when ="b">RIDEX | Filtro hidráulico, dirección </h3>
+              <span class="product__price" ng-switch-when ="b">S/151.00</span>
+
+              <h3 class="product__title" ng-switch-when ="c">RIDEX | Pinza de freno </h3>
+              <span class="product__price" ng-switch-when ="c">S/200.00</span>
+
+              <h3 class="product__title" ng-switch-when ="d">Barum Brillantis | Llantas 175 70R13 82T</h3>
+              <span class="product__price" ng-switch-when ="d">S/566.00</span>
+
+               <h3 class="product__title" ng-switch-when ="e">Bastón de Seguridad Timón</h3>
+              <span class="product__price" ng-switch-when ="e">S/44.00</span>
+
+              <h3 class="product__title" ng-switch-when ="f">DR. Wack | Líquido limpiaparabrisas </h3>
+              <span class="product__price" ng-switch-when ="f">S/38.00</span>
+
+              <h3 class="product__title" ng-switch-when ="g">ENERJET | Batería para Auto 11 Placas D40L</h3>
+              <span class="product__price" ng-switch-when ="g">S/300.00</span>
+
+              <h3 class="product__title" ng-switch-when ="h"> RIDEX | Cilindro receptor, embrague</h3>
+              <span class="product__price" ng-switch-when ="h">S/96.00</span>
+            </div>
+            <i class="product__icon fas fa-cart-plus"></i>
+      </div>
+      <br>
+  <!-- </div> -->
+  </section> 
+  </div>
+
+</main>
+
+	<footer class="main-footer">
+      <div class="footer__section">
+        <h2 class="footer__title">Sobre nosotros</h2>
+        <p class="footer__txt">Fercejor es una empresa la cual se dedica a la venta al por mayor y menor de repuestos para automóviles.</p>
+      </div>
+      <div class="footer__section">
+        <h2 class="footer__title">Dirección</h2>
+        <p class="footer__txt">Av Industrial 3515, San Martín de Porres 15311</p>
+        <h2 class="footer__title">Contáctanos</h2>
+        <p class="footer__txt">teléfono: +51 988 907 987</p>
+        <p class="footer__txt">Email: consultasfercejor@gmail.com</p>
+      </div>
+      <div class="footer__section">
+        <h2 class="footer__title">Atajos</h2>
+        <a href="Inicio.html" class="footer__link">Inicio</a>
+        <a href="Acerca.html" class="footer__link">Nuestra empresa</a>
+        <a href="Errores.html" class="footer__link">Reporte de errores</a>
+        <a href="Tienda.html" class="footer__link">Tienda</a>
+        <a href="" class="footer__link">Contáctanos</a>
+      </div>
+      <div class="footer__section">
+        <h2 class="footer__title">Regístrate a nuestras ofertas</h2>
+        <p class="footer__txt">Si te suscríbes a nuestro newsletter, recibirás nuestras nuevas ofertas y descuentos exclusivos.</p>
+        <input type="email" class="footer__input" placeholder="Ingresa tu email">
+      </div>
+      <p class="copy">© 2021 Fercejor. Todos los derechos reservados</p>
+    </footer>
+
+
+    
+	<script type="text/javascript">
+		var misEstilos = angular.module('estiloCompra',[]);
+		misEstilos.controller('controlador', function($scope){
+			$scope.imagenActiva = 'img/inicio.jpg';
+			$scope.imagenActiva1 = 'img/inicio.jpg';
+      $scope.imagenActiva2 = 'img/inicio.jpg';
+      $scope.imagenActiva3 = 'img/inicio.jpg';
+      $scope.imagenActiva4 = 'img/inicio.jpg';
+      $scope.imagenActiva5 = 'img/inicio.jpg';
+			$scope.opcionA =function(){
+				$scope.opcion = 'a';
+				$scope.imagenActiva= 'img/motor.jpg';
+				$scope.imagenActiva1= 'img/motor1.jpg';
+        $scope.imagenActiva2= 'img/motor3.jpg';
+        $scope.imagenActiva3= 'img/motor4.jpg';
+        $scope.imagenActiva4 = 'img/motor5.jpg';
+        $scope.imagenActiva5 = 'img/motor6.jpg';
+			}
+			$scope.opcionB= function(){
+				$scope.opcion = 'b';
+				$scope.imagenActiva='img/filtro_aire.jpg';
+				$scope.imagenActiva1= 'img/filtro_aceite2.jpg';
+        $scope.imagenActiva2= 'img/filtro_aceite3.jpg';
+        $scope.imagenActiva3= 'img/filtro_kit.jpg';
+        $scope.imagenActiva4 = 'img/filtro_combustible.jpg';
+        $scope.imagenActiva5 = 'img/filtro_hidraulico.jpg';
+			}
+			$scope.opcionC= function(){
+        $scope.opcion = 'c';
+        $scope.imagenActiva= 'img/freno_disco.jpg';
+        $scope.imagenActiva1= 'img/freno_pastilla1.jpg';
+        $scope.imagenActiva2= 'img/freno_cable.jpg';
+        $scope.imagenActiva3= 'img/freno_pinza.jpg';
+        $scope.imagenActiva4 = 'img/freno_zapatas.jpg';
+        $scope.imagenActiva5 = 'img/freno_servofreno.png';
+            }
+      $scope.opcionD= function(){
+        $scope.opcion = 'd';
+        $scope.imagenActiva= 'img/llanta_turanza.jpg';
+        $scope.imagenActiva1= 'img/spsport_llanta.jpg';
+        $scope.imagenActiva2= 'img/contact2_llanta.jpg';
+        $scope.imagenActiva3= 'img/hankook_llanta.jpg';
+        $scope.imagenActiva4 = 'img/llanta_michelin.jpg';
+        $scope.imagenActiva5 = 'img/llanta_barum.jpg';
+            }
+      $scope.opcionE= function(){
+        $scope.opcion = 'e';
+        $scope.imagenActiva= 'img/interior_elevalunas.jpg';
+        $scope.imagenActiva1= 'img/interior_resistencia.jpg';
+        $scope.imagenActiva2= 'img/interior_sensor.jpg';
+        $scope.imagenActiva3= 'img/interior_muelle.jpg';
+        $scope.imagenActiva4 = 'img/interior_calefaccion.jpg';
+        $scope.imagenActiva5 = 'img/bastondeseguridadtimon.jpg';
+            }
+      $scope.opcionF= function(){
+        $scope.opcion = 'f';
+        $scope.imagenActiva= 'img/aerosol.jpg';
+        $scope.imagenActiva1= 'img/lavaparabrisa.jpg';
+        $scope.imagenActiva2= 'img/limpieza_cera.jpg';
+        $scope.imagenActiva3= 'img/limpieza_tapices.jpg';
+        $scope.imagenActiva4 = 'img/pistola.jpg';
+        $scope.imagenActiva5 = 'img/limpieza_limpia.jpg';
+            }
+      $scope.opcionG= function(){
+        $scope.opcion = 'g';
+        $scope.imagenActiva= 'img/bateria_13placas.jpg';
+        $scope.imagenActiva1= 'img/bateria_11placas.jpg';
+        $scope.imagenActiva2= 'img/bateria1.jpg';
+        $scope.imagenActiva3= 'img/bateria_bosch.jpg';
+        $scope.imagenActiva4 = 'img/bateria_21placas.jpg';
+        $scope.imagenActiva5 = 'img/bateria_enerjet.jpg';
+            }
+
+      $scope.opcionH= function(){
+        $scope.opcion = 'h';
+        $scope.imagenActiva= 'img/embrague_disco.jpg';
+        $scope.imagenActiva1= 'img/embrague_kit1.jpg';
+        $scope.imagenActiva2= 'img/embrague_kit2.jpg';
+        $scope.imagenActiva3= 'img/embrague_cilindro1.jpg';
+        $scope.imagenActiva4 = 'img/embrague_horquilla.jpg';
+        $scope.imagenActiva5 = 'img/embragre_receptor.jpg';
+            }
+
+	});
+ </script>
+
+ <script src="js/InicioJs.js"></script>
+</body>
+</html>
